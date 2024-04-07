@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post">
+<label for="cuisines">Cuisines</label>
+<!--<input type="text" id="firstname" name="fname" placeholder="firstname">-->
+    <select name="cuisines" id="cuisines">
+  <option value="North Indian">North Indian</option>
+  <option value="Chinese">Chinese</option>
+  <option value="South Indian">South Indian</option>
+  <option value="Indian">Indian</option>
+        <option value="Pizzas">Pizzas</option>
+        <option value="Continental">Continental</option>
+        <option value="Italian">Italian</option>
+        <option value="American">American</option>
+        <option value="Arabian">Arabian</option>
+        <option value="Asian">Asian</option>
+</select>
+   <label for="currentlocation">Current Location</label>
+    <select name="currentlocation" id="currentlocation">
+  <option value="Rajajinagar">Rajajinagar</option>
+  <option value="Basavanagudi">Basavanagudi</option>
+  <option value="Koramangala">Koramangala</option>
+  <option value="BRIGADE ROAD">Brigade Road</option>
+        <option value="Seshadripuram">Seshadripuram</option>
+        <option value="Basaveshwara Nagar">Basaveshwar Nagar</option>
+        <option value="Central Bangalore">Central Bangalore</option>
+        <option value="Railway Parallel Road">Railway Parallel Road</option>
+        <option value="Mysore Road">Mysore Road</option>
+        <option value="MALLESHWARAM">Malleshwaram</option>
+        <option value="Nagarbhavi">Nagarbhavi</option>
+  <option value="Richmond Town">Richmond Town</option>
+
+  <option value="BTM Layout">BTM Layout</option>
+        <option value="High Grounds">High Grounds</option>
+        <option value="MG Road">MG Road</option>
+        <option value="Vasant Nagar RK">Vasanth Nagar</option>
+
+        <option value="Jayanagar">Jaya Nagar</option>
+        <option value="Frazer Town">Frazer Town</option>
+    </select>
+
+    <label for="location">Location</label>
+    <select name="location" id="location">
+   <option value="Rajajinagar">Rajajinagar</option>
+  <option value="Basavanagudi">Basavanagudi</option>
+  <option value="Koramangala">Koramangala</option>
+  <option value="BRIGADE ROAD">Brigade Road</option>
+        <option value="Seshadripuram">Seshadripuram</option>
+        <option value="Basaveshwara Nagar">Basaveshwar Nagar</option>
+        <option value="Central Bangalore">Central Bangalore</option>
+        <option value="Railway Parallel Road">Railway Parallel Road</option>
+        <option value="Mysore Road">Mysore Road</option>
+        <option value="MALLESHWARAM">Malleshwaram</option>
+        <option value="Nagarbhavi">Nagarbhavi</option>
+  <option value="Richmond Town">Richmond Town</option>
+
+  <option value="BTM Layout">BTM Layout</option>
+        <option value="High Grounds">High Grounds</option>
+        <option value="MG Road">MG Road</option>
+        <option value="Vasant Nagar RK">Vasanth Nagar</option>
+
+        <option value="Jayanagar">Jaya Nagar</option>
+        <option value="Frazer Town">Frazer Town</option>   </select>
+
+    <label for="dishcategory">Dish Category</label>
+    <select name="dishcategory" id="dishcategory">
+        <option value="nonveg">Veg</option>
+        <option value="nonveg">Non Veg</option>
+
+    </select>
+
+
+<button type="submit">predict</button>
+
+</form>
+
+<h1>Top rated restaurants According To Your Cuisines</h1>
+<table>
+  <tr>
+
+    <th>Restaurant Name</th>
+    <th>Rating</th>
+    <th>Cuisine</th>
+      <th> url</th>
+
+
+  </tr>
+
+
+
+ {% for res in res_data %}
+  <tr>
+    <td>{{ res.res_name }}</td>
+    <td>{{ res.rating }}</td>
+    <td>{{ cuisines }}</td>
+      <td>{{res.res_link}}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+<!--code for adding data to a table from a form -->
+
+
+<!--        <form action="">-->
+<!--            <label for="date">Date: </label>-->
+<!--            <input type="date" id="date">-->
+<!--            <br>-->
+<!--            -->
+<!--            <label for="desc">Description: </label>-->
+<!--            <input type="text" id="desc">-->
+<!--            <br>-->
+<!--            -->
+<!--            <label for="amount">Amount: </label>-->
+<!--            <input type="text" id="amount">-->
+<!--            <br>-->
+<!--            -->
+<!--            <input type="button" id="submit" value="Submit">-->
+<!--            <br>-->
+<!--        </form>-->
+<!--        -->
+<!--        <table id="table">-->
+<!--            <tr>-->
+<!--                <th>Date</th>-->
+<!--                <th>Description</th>-->
+<!--                <th>Amount</th>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    -->
+<!--        <script type="text/javascript">-->
+<!--            -->
+<!--            document.getElementById("submit").onclick=function()-->
+<!--            {-->
+<!--                document.getElementById("table").style.display="block";-->
+<!--                -->
+<!--                var table = document.getElementById("table");-->
+<!--                var row = table.insertRow(-1);-->
+<!--                var date = row.insertCell(0);-->
+<!--                var desc = row.insertCell(1);-->
+<!--                var amt = row.insertCell(2);-->
+<!--                date.innerHTML = document.getElementById("date").value;-->
+<!--                desc.innerHTML = document.getElementById("desc").value;-->
+<!--                amt.innerHTML = document.getElementById("amount").value;-->
+<!--                -->
+<!--                return false;-->
+<!--            }-->
+<!--        -->
+<!--        </script>-->
+
+
+
+</body>
+</html>
